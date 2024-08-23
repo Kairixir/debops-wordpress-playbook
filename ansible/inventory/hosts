@@ -16,3 +16,60 @@
 # You can however use a virtual machine as the Ansible Controller.
 
 [debops_all_hosts]
+webserver ansible_host=bratr-webserver ansible_user=admin-sevcikon
+webserver system_users__self_name=admin-sevcikon
+
+# Programming lanugages
+[debops_service_php]
+webserver
+
+# Webserver
+[debops_service_nginx]
+webserver
+
+[debops_service_wpcli]
+webserver
+
+# Networking?
+
+# Database
+[debops_service_mariadb_server]
+webserver
+
+[debops_service_mariadb]
+webserver
+
+[debops_sevvice_phpmyadmin]
+
+# Caching
+[debops_service_memcached]
+webserver
+
+[debops_service_redis_server]
+webserver
+
+# [debops_service_redis_sentinel]
+# webserver
+
+# Varnish cache is waiting on github wiki
+# https://github.com/debops/debops/wiki/DebOps-roles-in-development
+# [debops-contrib_service_varnish]
+# webserver
+
+# Security
+
+## Firewall
+[debops_service_ferm]
+webserver
+
+## Backup
+
+## Logging
+
+## Filtering
+[debops_service_fail2ban]
+webserver
+
+## Monitoring
+[debops_service_zabbix_agent]
+webserver

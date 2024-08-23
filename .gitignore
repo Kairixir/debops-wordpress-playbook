@@ -37,3 +37,6 @@ tramp
 
 #-- sftp configuration file
 sftp-config.json
+
+# Secrets
+ansible/secret
