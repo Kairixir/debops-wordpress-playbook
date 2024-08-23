@@ -43,4 +43,4 @@
   args:
     chdir: '{{ wordpress__root }}'
 
-- include: manage_plugins.yml
+- import_tasks: manage_plugins.yml

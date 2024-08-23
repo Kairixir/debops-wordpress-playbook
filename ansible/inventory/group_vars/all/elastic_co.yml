@@ -1,0 +1,3 @@
+---
+application__elastic_co__dependent_packages:
+  - 'elasticsearch'
