@@ -1,0 +1,4 @@
+---
+wordpress__ssl: True
+
+wordpress__domain: "digitalcenter.cz"

@@ -16,16 +16,16 @@
 # You can however use a virtual machine as the Ansible Controller.
 
 [debops_all_hosts]
-webserver ansible_fqdn=digitalcenter.cz ansible_host=bratr-webserver ansible_user=admin-sevcikon
-webserver system_users__self_name=admin-sevcikon
+digitalcenter.cz ansible_fqdn=digitalcenter.cz ansible_host=bratr-webserver ansible_user=admin-sevcikon ansible_inventory_hostname=digitalcenter.cz
+digitalcenter.cz system_users__self_name=admin-sevcikon
 
 # Programming lanugages
 # [debops_service_php]
 # webserver
 
 # Webserver
-# [debops_service_nginx]
-# webserver
+[debops_service_nginx]
+digitalcenter.cz
 #
  # [debops_service_wpcli]
 # webserver
@@ -40,11 +40,11 @@ webserver system_users__self_name=admin-sevcikon
 # webserver
 
 [debops_service_phpmyadmin]
-webserver
+digitalcenter.cz
 
 # Caching
 [debops_service_memcached]
-webserver
+digitalcenter.cz
 
 # [debops_service_redis_sentinel]
 # webserver
@@ -70,7 +70,8 @@ webserver
 
 ## Monitoring
 [debops_service_zabbix_agent]
-webserver
+digitalcenter.cz
 
 [wordpress]
-webserver
+digitalcenter.cz
+

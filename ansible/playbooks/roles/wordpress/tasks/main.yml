@@ -53,5 +53,5 @@
     hour: '{{ wordpress__cron_hour }}'
   when: wordpress__cron_enabled|bool
 
-- import_tasks: manage_ssl.yml
+- include_tasks: manage_ssl.yml
   when: wordpress__ssl|bool

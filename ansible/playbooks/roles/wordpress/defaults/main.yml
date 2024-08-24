@@ -660,7 +660,7 @@ wordpress__table_prefix: 'wp_'
 # .. envvar:: wordpress__domain
 #
 # WordPress URL address
-wordpress__domain: '{{ inventory_hostname }}'
+# wordpress__domain: '{{ inventory_hostname }}'
 
 # .. envvar:: wordpress__root
 #
