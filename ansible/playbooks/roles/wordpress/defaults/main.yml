@@ -340,12 +340,17 @@ wordpress__nginx__dependent_upstreams:
 # .. envvar:: wordpress__nginx__listen
 #
 # Default listen port for HTTP connections used by ``debops.nginx``.
-wordpress__nginx__listen: [ '[::]:80' ]
+wordpress__nginx__listen: ['[::]:80', '80' ]
 
 # .. envvar:: wordpress__nginx__listen_ssl
 #
 # Default listen port for HTTPS connections used by ``debops.nginx``.
-wordpress__nginx__listen_ssl: [ '[::]:443' ]
+wordpress__nginx__listen_ssl: ['[::]:443', '443']
+
+# .. envvar:: wordpress__nginx__listen_ssl
+#
+# Default to serving IPv6 and IPv4 on the same port ``debops.nginx``.
+wordpress__nginx__manage_ipv6only: False
 
 # .. envvar:: wordpress__nginx__pki_realm
 #

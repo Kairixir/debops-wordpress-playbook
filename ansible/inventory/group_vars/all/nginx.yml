@@ -1,0 +1,2 @@
+---
+nginx_manage_ipv6only: False

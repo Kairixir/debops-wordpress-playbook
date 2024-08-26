@@ -233,6 +233,7 @@ wordpress__nginx__server_varnish:
   deny_hidden: False
   favicon: False
   proxy_pass: 'http://{{ wordpress__nginx__upstream_varnish_name }}'
+  manage_ipv6only: '{{ wordpress__nginx__manage_ipv6only }}'
 
   options: |
     client_max_body_size  {{ wordpress__php__post_max_size }};
