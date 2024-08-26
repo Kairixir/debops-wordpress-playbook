@@ -1,0 +1,2 @@
+---
+elasticsearch__network_host: '["localhost"]'

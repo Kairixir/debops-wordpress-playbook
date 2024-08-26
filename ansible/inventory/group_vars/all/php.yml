@@ -1,4 +1,4 @@
 ---
 php__sury: True
 php__version_preference: ['php8.1']
-php__packages: ['mysql', 'redis']
+php__packages: ['mysql', 'redis', 'elasticsearch'] 
