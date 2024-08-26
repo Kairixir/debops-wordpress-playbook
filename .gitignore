@@ -40,3 +40,6 @@ sftp-config.json
 
 # Secrets
 ansible/secret
+
+# Ignore logs
+*.log
