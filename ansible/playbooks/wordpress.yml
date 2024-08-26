@@ -46,11 +46,11 @@
         tasks_from: 'main_env'
       tags: [ 'role::sysfs', 'role::sysfs:env', 'role::secret', 'role::pki' ]
 
-    # - name: Prepare elasticsearch environment
-    #   ansible.builtin.import_role:
-    #     name: 'elasticsearch'
-    #     tasks_from: 'main_env'
-    #   tags: [ 'role::elasticsearch', 'role::elasticsearch:env', 'role:elasticsearch:config', 'role::apt_preferences', 'role::pki', 'role::secret' ]
+    - name: Prepare elasticsearch environment
+      ansible.builtin.import_role:
+        name: 'elasticsearch'
+        tasks_from: 'main_env'
+      tags: [ 'role::elasticsearch', 'role::elasticsearch:env', 'role:elasticsearch:config', 'role::apt_preferences', 'role::pki', 'role::secret' ]
 
     # - role: pki/env
     #   tags: [ 'role::pki', 'role::pki:env', 'role::apt_preferences', 'role::secret' ]
@@ -79,33 +79,33 @@
     #
 
     - role: keyring
-      tags: [ 'role::keyring', 'skip::keyring'] # , 'role::elastic_co' 
-      # keyring__dependent_apt_keys:
-      #   - '{{ elastic_co__keyring__dependent_apt_keys }}'
+      tags: [ 'role::keyring', 'skip::keyring','role::elastic_co']   
+      keyring__dependent_apt_keys:
+        - '{{ elastic_co__keyring__dependent_apt_keys }}'
 
     - role: apt_preferences
-      tags: [ 'role::apt_preferences', 'skip::apt_preferences',  'role::nginx', 'role::php',  'role::redis_server' ] #  'role::elasticsearch', 'role::java',
+      tags: [ 'role::apt_preferences', 'skip::apt_preferences',  'role::nginx', 'role::php',  'role::redis_server' , 'role::elasticsearch', 'role::java'] #  
       apt_preferences__dependent_list:
-        # - '{{ elastic_co__apt_preferences__dependent_list }}'
-        # - '{{ java__apt_preferences__dependent_list }}'
+        - '{{ elastic_co__apt_preferences__dependent_list }}'
+        - '{{ java__apt_preferences__dependent_list }}'
         - '{{ nginx__apt_preferences__dependent_list }}'
         - '{{ php__apt_preferences__dependent_list }}'
         - '{{ redis_server__apt_preferences__dependent_list }}'
 
     - role: etc_services
-      tags: [ 'role::etc_services', 'skip::etc_services', 'role::redis_server' ] # , 'role::elasticsearch'
+      tags: [ 'role::etc_services', 'skip::etc_services', 'role::redis_server', 'role::elasticsearch' ] # , 
       etc_services__dependent_list:
-        # - '{{ elasticsearch__etc_services__dependent_list }}'
+        - '{{ elasticsearch__etc_services__dependent_list }}'
         - '{{ redis_server__etc_services__dependent_list }}'
 
     - role: ferm
-      tags: [ 'role::ferm', 'skip::ferm', 'role::nginx' ] #  'role::elasticsearch',
+      tags: [ 'role::ferm', 'skip::ferm', 'role::nginx' , 'role::elasticsearch'] #  
       ferm__dependent_rules:
-        # - '{{ elasticsearch__ferm__dependent_rules }}'
+        - '{{ elasticsearch__ferm__dependent_rules }}'
         - '{{ nginx__ferm__dependent_rules }}'
 
-    # - role: java
-    #   tags: [ 'role::java', 'skip::java', 'role::elasticsearch' ]
+    - role: java
+      tags: [ 'role::java', 'skip::java', 'role::elasticsearch' ]
 
     - role: logrotate
       tags: [ 'role::logrotate', 'skip::logrotate', 'role::php' ]
@@ -124,17 +124,17 @@
         - '{{ redis_server__python__dependent_packages2 }}'
 
     - role: secret
-      tags: [ 'role::secret', 'skip::secret',  'role::pki', 'role::sysfs' ] # 'role::elasticsearch',
+      tags: [ 'role::secret', 'skip::secret',  'role::pki', 'role::sysfs' , 'role::elasticsearch']
       secret_directories:
         - '{{ pki_env_secret_directories | d([]) }}'
-        #        - '{{ elasticsearch__secret__directories | d([]) }}'
+        - '{{ elasticsearch__secret__directories | d([]) }}'
         - '{{ sysfs__secret__directories | d([]) }}'
         - '{{ wordpress__secret__directories }}'
 
     - role: sysctl
-      tags: [ 'role::sysctl', 'skip::sysctl', 'role::redis_server' ] # , 'role::elasticsearch'
+      tags: [ 'role::sysctl', 'skip::sysctl', 'role::redis_server' , 'role::elasticsearch'] # , 
       sysctl__dependent_parameters:
-        # - '{{ elasticsearch__sysctl__dependent_parameters }}'
+        - '{{ elasticsearch__sysctl__dependent_parameters }}'
         - '{{ redis_server__sysctl__dependent_parameters }}'
 
     - role: sysfs
@@ -167,13 +167,13 @@
     # Elasticsearch roles
     #
 
-    # - role: elastic_co
-    #   tags: [ 'role::elastic_co', 'skip::elastic_co', 'role::elasticsearch' ]
-    #   elastic_co__dependent_packages:
-    #     - '{{ elasticsearch__elastic_co__dependent_packages }}'
-    #
-    # - role: elasticsearch
-    #   tags: [ 'role::elasticsearch', 'skip::elasticsearch' ]
+    - role: elastic_co
+      tags: [ 'role::elastic_co', 'skip::elastic_co', 'role::elasticsearch' ]
+      elastic_co__dependent_packages:
+        - '{{ elasticsearch__elastic_co__dependent_packages }}'
+
+    - role: elasticsearch
+      tags: [ 'role::elasticsearch', 'skip::elasticsearch' ]
 
     # Web server roles
     #
