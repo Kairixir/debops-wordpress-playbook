@@ -1,0 +1,10 @@
+pki_realms:
+  - name: '{{ wordpress__domain }}'
+    acme: True
+    acme_subdomains: ['www']
+    acme_ca: 'le-live-v2'
+    pki_acme_contacts: ["mailto:info@eazymark.eu"]
+    acme_contacts: ["mailto:info@eazymark.eu"]
+    subject: ['CN=info@eazymark.eu']
+    subject_alt_names: ["email:kairixir@protonmail.com"]
+

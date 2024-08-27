@@ -1,0 +1,5 @@
+---
+wordpress__database_name: 'eazymarkeu'
+wordpress__user_name: 'mariadb_admin_eazymarkeu'
+wordpress__admin_username: 'wp_admin_eazymarkeu'
+wordpress__domain: "eazymark.eu"

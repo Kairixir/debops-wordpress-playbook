@@ -19,46 +19,21 @@
 digitalcenter.cz ansible_fqdn=digitalcenter.cz ansible_host=bratr-webserver ansible_user=admin-sevcikon ansible_inventory_hostname=digitalcenter.cz
 digitalcenter.cz system_users__self_name=admin-sevcikon
 
-# Programming lanugages
-# [debops_service_php]
-# webserver
+eazymark.eu ansible_fqdn=eazymark.eu ansible_host=bratr-webserver ansible_user=admin-sevcikon ansible_inventory_hostname=eazymark.eu
+eazymark.eu system_users__self_name=admin-sevcikon
 
 # Webserver
-[debops_service_nginx]
-digitalcenter.cz
-#
- # [debops_service_wpcli]
-# webserver
-
-# Networking?
-
-# Database
-# [debops_service_mariadb_server]
-# webserver
-# 
-# [debops_service_mariadb]
-# webserver
+ # [debops_service_nginx]
+# digitalcenter.cz
 
 [debops_service_phpmyadmin]
 digitalcenter.cz
+eazymark.eu
 
 # Caching
 [debops_service_memcached]
 digitalcenter.cz
-
-# [debops_service_redis_sentinel]
-# webserver
-
-# Varnish cache is waiting on github wiki
-# https://github.com/debops/debops/wiki/DebOps-roles-in-development
-# [debops-contrib_service_varnish]
-# webserver
-
-# Security
-
-## Firewall
-# [debops_service_ferm]
-# webserver
+eazymark.eu
 
 ## Backup
 
@@ -71,7 +46,9 @@ digitalcenter.cz
 ## Monitoring
 [debops_service_zabbix_agent]
 digitalcenter.cz
+eazymark.eu
 
 [wordpress]
 digitalcenter.cz
+eazymark.eu
 

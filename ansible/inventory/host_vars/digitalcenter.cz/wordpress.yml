@@ -1,0 +1,5 @@
+---
+wordpress__database_name: 'digitalcentercz'
+wordpress__user_name: 'mariadb_admin_digitalcentercz'
+wordpress__admin_username: 'wp_admin_digitalcentercz'
+wordpress__domain: "digitalcenter.cz"

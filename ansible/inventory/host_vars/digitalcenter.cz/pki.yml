@@ -1,0 +1,10 @@
+---
+pki_realms:
+  - name: digitalcenter.cz
+    acme: True
+    acme_subdomains: ['www']
+    # acme_ca: 'le-staging-v2'
+    pki_acme_contacts: ["mailto:info@digitalcenter.cz"]
+    acme_contacts: ["mailto:info@digitalcenter.cz"]
+    subject: ['CN=info@digitalcenter.cz']
+    subject_alt_names: ["email:kairixir@protonmail.com"]
