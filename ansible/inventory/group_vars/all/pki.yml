@@ -3,3 +3,4 @@ pki_acme_install: True
 pki_acme: True
 pki_enabled: True
 
+# pki_authority_preference: ['selfsigned', 'internal', 'external', 'acme']

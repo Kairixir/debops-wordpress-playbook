@@ -1,9 +1,11 @@
 ---
+wordpress__ssl: False
+
 pki_realms:
-  - name: digitalcenter.cz
-    acme: True
+  - name: eazymark.cz
+    acme: False
     acme_subdomains: ['www']
-    acme_ca: 'le-live-v2'
+    acme_ca: 'le-staging-v2'
     pki_acme_contacts: ["mailto:info@digitalcenter.cz"]
     acme_contacts: ["mailto:info@digitalcenter.cz"]
     subject: ['CN=info@digitalcenter.cz']

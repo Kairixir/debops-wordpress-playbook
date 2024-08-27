@@ -1,0 +1,7 @@
+# List of domain names that the nginx server will redirect to the WordPress site.
+wordpress__nginx__redirect_from: "{{ [ 'www.' + wordpress__domain ] }}"
+
+# .. envvar:: wordpress__nginx__server_name
+#
+# List of domain names that the nginx server responds to.
+wordpress__nginx__server_name: "{{ [ wordpress__domain, 'www.' + wordpress__domain ] }}"

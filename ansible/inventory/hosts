@@ -22,18 +22,25 @@ digitalcenter.cz system_users__self_name=admin-sevcikon
 eazymark.eu ansible_fqdn=eazymark.eu ansible_host=bratr-webserver ansible_user=admin-sevcikon ansible_inventory_hostname=eazymark.eu
 eazymark.eu system_users__self_name=admin-sevcikon
 
-# Webserver
- # [debops_service_nginx]
-# digitalcenter.cz
+eazymark.cz ansible_fqdn=eazymark.cz ansible_host=bratr-webserver ansible_user=admin-sevcikon ansible_inventory_hostname=eazymark.cz
+eazymark.cz system_users__self_name=admin-sevcikon
+
+# Webserver group
+[webservers]
+digitalcenter.cz
+eazymark.eu
+eazymark.cz
 
 [debops_service_phpmyadmin]
 digitalcenter.cz
 eazymark.eu
+eazymark.cz
 
 # Caching
 [debops_service_memcached]
 digitalcenter.cz
 eazymark.eu
+eazymark.cz
 
 ## Backup
 
@@ -47,8 +54,10 @@ eazymark.eu
 [debops_service_zabbix_agent]
 digitalcenter.cz
 eazymark.eu
+eazymark.cz
 
 [wordpress]
 digitalcenter.cz
 eazymark.eu
+eazymark.cz
 
