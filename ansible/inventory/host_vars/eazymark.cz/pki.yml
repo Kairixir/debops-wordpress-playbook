@@ -1,8 +1,13 @@
 ---
-wordpress__ssl: False
+# For no certificate use:
+# wordpress__ssl: False
+# And comment out following two lines
+wordpress__ssl: True
+worpdress__ssl_provider: 'selfsigned'
 
 pki_realms:
   - name: eazymark.cz
+    ssl: True
     acme: False
     acme_subdomains: ['www']
     acme_ca: 'le-staging-v2'

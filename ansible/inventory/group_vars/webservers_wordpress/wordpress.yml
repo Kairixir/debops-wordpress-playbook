@@ -1,0 +1,2 @@
+---
+wordpress__database_password: "{{ lookup('password', secret + '/mariadb/' + 'webservers_wordpress' + '/credentials/' + wordpress__database_user + '/password length=' + wordpress__password_length) }}"

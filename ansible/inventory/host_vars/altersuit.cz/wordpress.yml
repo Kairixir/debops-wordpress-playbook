@@ -1,0 +1,5 @@
+---
+wordpress__database_name: 'altersuitcz'
+wordpress__user_name: 'mariadb_admin_altersuitcz'
+wordpress__admin_username: 'wp_admin_altersuitcz'
+wordpress__domain: "altersuit.cz"

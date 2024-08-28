@@ -655,6 +655,8 @@ wordpress__database_name: 'wordpress'
 # .. envvar:: wordpress__database_password
 #
 # WordPress database password
+# TODO: Find out what does ansible_local.mariadb.delegate_to do and fix this so it is not all in one folder
+# Currently it's re-defined in inventory/group_vars/wordpress.yml
 wordpress__database_password: "{{ lookup('password', secret + '/mariadb/' + ansible_local.mariadb.delegate_to + '/credentials/' + wordpress__database_user + '/password length=' + wordpress__password_length) }}"
 
 # .. envvar:: wordpress__table_prefix

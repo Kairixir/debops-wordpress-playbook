@@ -1,0 +1,17 @@
+---
+# For no certificate uncomment:
+wordpress__ssl: False
+# And comment out following two lines
+# wordpress__ssl: True
+# worpdress__ssl_provider: 'selfsigned'
+
+pki_realms:
+  - name: altersuit.cz
+    ssl: False
+    acme: False
+    acme_subdomains: ['www']
+    acme_ca: 'le-staging-v2'
+    pki_acme_contacts: ["mailto:info@altersuit.cz"]
+    acme_contacts: ["mailto:info@altersuit.cz"]
+    subject: ['CN=info@altersuit.cz']
+    subject_alt_names: ["email:kairixir@protonmail.com"]

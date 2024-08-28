@@ -25,12 +25,15 @@ eazymark.eu system_users__self_name=admin-sevcikon
 eazymark.cz ansible_fqdn=eazymark.cz ansible_host=bratr-webserver ansible_user=admin-sevcikon ansible_inventory_hostname=eazymark.cz
 eazymark.cz system_users__self_name=admin-sevcikon
 
+altersuit.cz ansible_fqdn=altersuit.cz ansible_host=bratr-webserver ansible_user=admin-sevcikon ansible_inventory_hostname=altersuit.cz
+altersuit.cz system_users__self_name=admin-sevcikon
 
 # Webserver group
 [webservers_wordpress]
 digitalcenter.cz
 eazymark.eu
 eazymark.cz
+altersuit.cz
 
 # Wordpress — all domains need to be listed
 [wordpress:children]
